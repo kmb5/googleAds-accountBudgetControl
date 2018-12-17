@@ -1,25 +1,22 @@
 function main() {
-    var accountBudgetLimit = 2000;         						 	 						// set your account budget limit here
-  	var email = 'bendeguz.kovacs@v-co.io' 							 							// who to send the notifications to
-    var camp_name_contains = 'heat-pump'	 													// to filter campaigns containing this string
-    var camp_name_in_email = 'Heat Pump'							 							// the reference to the campaigns in the e-mail sent
-    var date_range = 'THIS_MONTH'																// date range to check for the spend
+    var accountBudgetLimit = LIMIT_NUMBER_HERE;         // set your account budget limit here
+  	var email = 'YOUR_EMAIL_HERE' 					    // who to send the notifications to
+    var camp_name_contains = 'CAMPAIGN_NAME_HERE'	    // to filter campaigns containing this string
+    var camp_name_in_email = 'CAMPAIGN_REFERENCE_HERE'	// the reference to the campaigns in the e-mail sent
+    var date_range = 'THIS_MONTH'						// date range to check for the spend
   
 // DO NOT MODIFY FROM THIS PART ONWARDS!!!
 // ISSUE - SMART DISPLAY CAMPAIGNS CAN'T BE PAUSED!
     
-    var accountCampaignsCost = 0;  									 							// don't modify, just initializing the variable to loop over it
+    var accountCampaignsCost = 0;  	// don't modify, just initializing the variable to loop over it
   
   
   	var report = AdsApp.report("SELECT Cost FROM CAMPAIGN_PERFORMANCE_REPORT WHERE CampaignName CONTAINS_IGNORE_CASE '"+ camp_name_contains +"' DURING " + date_range)
     var report_iterator = report.rows()
 
   	/*
-     *
-     *
      * This While-loop sums the costs garnered by all 
      * the campaigns of the account for the specified date range
-     *
      */
   	while (report_iterator.hasNext()){
       var report_row = report_iterator.next()
