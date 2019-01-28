@@ -1,5 +1,3 @@
-# google-ads-account-budget-control
-Account budget control script for Google Ads - supports all campaign types (including Smart Display)
-NOTES:
-- All campaigns are included when the spend is calculated
-- AdsApp.campaigns() doesn't support Smart Display campaigns, so those have to be paused MANUALLY
+# Account Budget Control Script for Google Ads
+Checks if the combined spend for a subset of campaigns (filtered by campaign name) is above a given budget - if yes, pauses the campaigns and sends an e-mail. **Important - Smart Display campaigns are not paused automatically - that has to be done manually!** There are also options for e-mail alerts at given thresholds (eg. 50% of the given budget) without pausing.
+
